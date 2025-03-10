@@ -113,6 +113,9 @@ services:
       - evolution-network
     env_file:
       - ./evolution-api/.env
+    depends_on:
+      - redis-evolution
+      - postgres-evolution
 
   nginx:
     build: 
