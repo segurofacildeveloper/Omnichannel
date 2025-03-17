@@ -1,0 +1,8 @@
+# Baseado na imagem oficial do Postgres 14
+FROM postgres:14
+
+# Atualiza os pacotes e instala o pgvector.
+# (O nome do pacote pode variar conforme a distribuição – verifique se "postgresql-14-pgvector" está disponível)
+RUN apt-get update && \
+    apt-get install -y postgresql-14-pgvector && \
+    rm -rf /var/lib/apt/lists/*
